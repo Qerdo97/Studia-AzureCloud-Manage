@@ -253,7 +253,7 @@ function reportUsers
                 $ArrayOfUserWithoutDepartmentLicenseInSkuPartNumber += "[$( $UserWithoutDepartmentLicenseInSkuPartNumber )]"
             }
             Add-Content -Path $completeUserPath\$completeUsersWithoutDepartmentFileName -Value "$UserWithoutDepartmentName,$UserWithoutDepartmentSurname,$UserWithoutDepartmentUPN,$ArrayOfUserWithoutDepartmentLicenseInSkuPartNumber"
-            Clear-Variable -Name ArrayOfUserInDepartmentLicenseInSkuPartNumber -ErrorAction SilentlyContinue | Out-Null
+            Clear-Variable -Name ArrayOfUserWithoutDepartmentLicenseInSkuPartNumber -ErrorAction SilentlyContinue | Out-Null
 
         }
         Write-Host -ForegroundColor Green "Raport użytkowników BEZ DZIAŁU został zapisany w $completeUserPath\$completeUsersWithoutDepartmentFileName"
