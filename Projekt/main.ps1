@@ -274,7 +274,7 @@ function reportGroups
         Add-Content -Path $completeGroupsPath\$completeGroupsFileName -Value "Owners,Members"
         $GroupOwners = (Get-AzureADGroupOwner -ObjectId $Group.ObjectId).DisplayName
         $GroupMembers = (Get-AzureADGroupMember -ObjectId $Group.ObjectId).DisplayName
-        Add-Content -Path $completeGroupsPath\$completeGroupsFileName -Value "$( $GroupOwners -join ";" ),$( $GroupMembers -join ";" )"
+        Add-Content -Path $completeGroupsPath\$completeGroupsFileName -Value "$( $GroupOwners -join " | " ),$( $GroupMembers -join " | " )"
         Write-Host -ForegroundColor Green "Raport grup został zapisany w $completeGroupsPath\$completeGroupsFileName"
     }
 }
